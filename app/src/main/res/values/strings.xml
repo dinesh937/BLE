@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BLEControlAppDuplicate</string>
+    <string-array name="macros_array">
+        <item>Select Macro</item>
+        <item>BNO Eu&amp;Qua</item>
+        <item>BNO Set up Cal</item>
+    </string-array>
+</resources>

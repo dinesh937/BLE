@@ -1,7 +1,8 @@
-package com.example.blecontrolappduplicate;
+package com.example.dashpod;
 
 import android.Manifest;
 import android.bluetooth.*;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -35,8 +36,7 @@ public class DeviceActivity extends AppCompatActivity {
     private ScrollView svTerminal;
     private EditText etMacroName, etMacroValue;
     private RadioGroup rgEditMode, rgAction;
-    private CheckBox cbRepeat;
-    private Button btnExecute;
+    private Button btnExecute, btnBPM;
     private LineChart eulerChart, quaternionChart;
     private LineDataSet yawDataSet, pitchDataSet, rollDataSet;
     private LineDataSet qwDataSet, qxDataSet, qyDataSet, qzDataSet;
@@ -72,14 +72,14 @@ public class DeviceActivity extends AppCompatActivity {
         etMacroValue = findViewById(R.id.etMacroValue);
         rgEditMode = findViewById(R.id.rgEditMode);
         rgAction = findViewById(R.id.rgAction);
-        cbRepeat = findViewById(R.id.cbRepeat);
         btnExecute = findViewById(R.id.btnExecute);
+        btnBPM = findViewById(R.id.btnBPM); // Initialize BPM button
         eulerChart = findViewById(R.id.eulerChart);
         quaternionChart = findViewById(R.id.quaternionChart);
 
         Spinner spMacros = findViewById(R.id.spMacros);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.macros_array, android.R.layout.simple_spinner_item);
+                R.array.device_macros_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spMacros.setAdapter(adapter);
 
@@ -104,6 +104,7 @@ public class DeviceActivity extends AppCompatActivity {
         });
 
         btnExecute.setOnClickListener(v -> executeMacro());
+        btnBPM.setOnClickListener(v -> goToBPMActivity(v)); // Pass the View parameter
     }
 
     private void initializeCharts() {
@@ -419,6 +420,17 @@ public class DeviceActivity extends AppCompatActivity {
                     (i + 1 < len ? Character.digit(s.charAt(i + 1), 16) : 0));
         }
         return data;
+    }
+
+    public void goToBPMActivity(View view) {
+        if (bluetoothGatt != null && bluetoothGatt.getDevice() != null) {
+            Intent intent = new Intent(this, BPMActivity.class);
+            intent.putExtra("device_address", bluetoothGatt.getDevice().getAddress());
+            startActivity(intent);
+            appendToTerminal(timeFormat.format(new Date()) + " Navigating to BPM Activity");
+        } else {
+            appendToTerminal(timeFormat.format(new Date()) + " No active Bluetooth connection");
+        }
     }
 
     @RequiresPermission(Manifest.permission.BLUETOOTH_CONNECT)

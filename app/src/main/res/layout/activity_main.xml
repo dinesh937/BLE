@@ -5,6 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:background="#333333"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="BLEControlAppDuplicate"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
     <Button
         android:id="@+id/btnToggleBluetooth"
         android:layout_width="match_parent"

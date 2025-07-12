@@ -1,4 +1,4 @@
-package com.example.blecontrolappduplicate;
+package com.example.dashpod;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private BluetoothLeScanner bluetoothLeScanner;
     private Button btnToggleBluetooth, btnScan;
     private ListView listDevices;
-    private DeviceAdapter deviceAdapter;
+    private com.example.dashpod.DeviceAdapter deviceAdapter;
     private ArrayList<BluetoothDevice> deviceList = new ArrayList<>();
     private final Handler handler = new Handler(Looper.getMainLooper());
     private boolean hasPromptedPermissions = false;

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.blecontrolappduplicate"
+    namespace = "com.example.dashpod"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.blecontrolappduplicate"
+        applicationId = "com.example.dashpod"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

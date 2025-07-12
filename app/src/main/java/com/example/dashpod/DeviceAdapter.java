@@ -1,4 +1,4 @@
-package com.example.blecontrolappduplicate;
+package com.example.dashpod;
 
 import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothDevice;

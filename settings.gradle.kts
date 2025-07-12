@@ -21,5 +21,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "blecontrolappduplicate"
+rootProject.name = "dashpod"
 include(":app")

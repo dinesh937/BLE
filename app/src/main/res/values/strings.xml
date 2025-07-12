@@ -1,8 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">BLEControlAppDuplicate</string>
-    <string-array name="macros_array">
+    <string name="app_name">DashPod</string>
+
+    <!-- Array for DeviceActivity Spinner -->
+    <string-array name="device_macros_array">
         <item>Select Macro</item>
         <item>BNO Eu&amp;Qua</item>
         <item>BNO Set up Cal</item>
+    </string-array>
+
+    <!-- Array for BPMActivity Spinner -->
+    <string-array name="bpm_macros_array">
+        <item>Select Macro</item>
+        <item>BPM Start</item>
+        <item>BPM Stop</item>
     </string-array>
 </resources>

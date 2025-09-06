@@ -10,6 +10,7 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <!-- Terminal -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,6 +34,7 @@
                 android:typeface="monospace" />
         </ScrollView>
 
+        <!-- Euler -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,6 +48,7 @@
             android:layout_height="200dp"
             android:layout_marginTop="8dp" />
 
+        <!-- Quaternion -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,6 +62,49 @@
             android:layout_height="200dp"
             android:layout_marginTop="8dp" />
 
+        <!-- 3D Avatar Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="3D Avatar Motion"
+            android:textStyle="bold"/>
+
+        <FrameLayout
+            android:id="@+id/avatarContainer"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="8dp"
+            android:background="#FF333333">
+
+            <!-- Unity Player View will be added here programmatically -->
+
+        </FrameLayout>
+
+        <!-- Avatar Control Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/btnResetAvatar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="Reset Avatar"/>
+
+            <Button
+                android:id="@+id/btnToggleAvatar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Toggle Avatar"/>
+        </LinearLayout>
+
+        <!-- Edit Macro -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

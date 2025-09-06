@@ -23,3 +23,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "dashpod"
 include(":app")
+include(":app", ":unityLibrary")
+project(":unityLibrary").projectDir = file("unityLibrary")
+
+

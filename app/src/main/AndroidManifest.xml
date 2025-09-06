@@ -1,12 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.dashpod">
 
-    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
-    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- Bluetooth permissions -->
+    <uses-permission android:name="android.permission.BLUETOOTH"
+        android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"
+        android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
+        android:usesPermissionFlags="neverForLocation"
+        tools:node="merge" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"
+        tools:node="merge" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE"
+        tools:node="merge" />
+
+    <!-- Location permissions for Bluetooth scanning on Android 6+ -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" tools:node="merge" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" tools:node="merge" />
+
+    <!-- Internet permission for MPAndroidChart or other network features -->
+    <uses-permission android:name="android.permission.INTERNET" tools:node="merge" />
+
+    <!-- Wake lock (optional, used if DeviceActivity needs it) -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" tools:node="merge" />
+
+    <!-- Hardware features -->
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -15,19 +41,42 @@
         android:roundIcon="@mipmap/dashpod"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-        <activity
-            android:name=".DeviceActivity"
-            android:exported="false" />
+
+        <!-- Main Activity (Launcher) -->
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Device Activity -->
+        <activity
+            android:name=".DeviceActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <!-- BPM Activity (if it exists) -->
         <activity
             android:name=".BPMActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".DeviceActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DeviceActivity" />
+        </activity>
+
     </application>
+
 </manifest>

@@ -1,0 +1,111 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    xmlns:tools="http://schemas.android.com/tools"
+4    package="com.unity3d.player" >
+5
+6    <uses-sdk android:minSdkVersion="24" />
+7
+8    <uses-feature android:glEsVersion="0x00030000" />
+8-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:3:3-52
+8-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:3:17-49
+9    <uses-feature
+9-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:4:3-91
+10        android:name="android.hardware.vulkan.version"
+10-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:4:17-63
+11        android:required="false" />
+11-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:4:64-88
+12    <uses-feature
+12-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:5:3-88
+13        android:name="android.hardware.touchscreen"
+13-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:5:17-60
+14        android:required="false" />
+14-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:5:61-85
+15
+16    <application
+16-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:6:3-21:17
+17        android:enableOnBackInvokedCallback="true"
+17-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:6:16-58
+18        android:extractNativeLibs="true" >
+18-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:6:59-91
+19        <meta-data
+19-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:7:5-69
+20            android:name="unity.splash-mode"
+20-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:7:16-48
+21            android:value="0" />
+21-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:7:49-66
+22        <meta-data
+22-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:8:5-74
+23            android:name="unity.splash-enable"
+23-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:8:16-50
+24            android:value="True" />
+24-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:8:51-71
+25        <meta-data
+25-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:9:5-78
+26            android:name="unity.launch-fullscreen"
+26-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:9:16-54
+27            android:value="True" />
+27-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:9:55-75
+28        <meta-data
+28-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:10:5-84
+29            android:name="unity.render-outside-safearea"
+29-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:10:16-60
+30            android:value="True" />
+30-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:10:61-81
+31        <meta-data
+31-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:11:5-81
+32            android:name="notch.config"
+32-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:11:16-43
+33            android:value="portrait|landscape" />
+33-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:11:44-78
+34        <meta-data
+34-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:12:5-84
+35            android:name="unity.auto-report-fully-drawn"
+35-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:12:16-60
+36            android:value="true" />
+36-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:12:61-81
+37
+38        <activity
+38-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:13:5-20:16
+39            android:name="com.unity3d.player.UnityPlayerActivity"
+39-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:13:15-68
+40            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+40-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:13:180-361
+41            android:exported="true"
+41-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:13:433-456
+42            android:hardwareAccelerated="false"
+42-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:13:397-432
+43            android:launchMode="singleTask"
+43-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:13:148-179
+44            android:resizeableActivity="false"
+44-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:13:362-396
+45            android:screenOrientation="fullUser"
+45-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:13:111-147
+46            android:theme="@style/UnityThemeSelector" >
+46-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:13:69-110
+47            <intent-filter>
+47-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:14:7-17:23
+48                <category android:name="android.intent.category.LAUNCHER" />
+48-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:15:9-69
+48-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:15:19-66
+49
+50                <action android:name="android.intent.action.MAIN" />
+50-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:16:9-61
+50-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:16:17-58
+51            </intent-filter>
+52
+53            <meta-data
+53-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:18:7-82
+54                android:name="unityplayer.UnityActivity"
+54-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:18:18-58
+55                android:value="true" />
+55-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:18:59-79
+56            <meta-data
+56-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:19:7-70
+57                android:name="notch_support"
+57-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:19:18-46
+58                android:value="true" />
+58-->C:\Users\dines\AndroidStudioProjects\BLE\unityLibrary\src\main\AndroidManifest.xml:19:47-67
+59        </activity>
+60    </application>
+61
+62</manifest>

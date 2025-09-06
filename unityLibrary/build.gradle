@@ -1,0 +1,61 @@
+apply plugin: 'com.android.library'
+
+android {
+    namespace "com.unity3d.player"
+    compileSdkVersion 35
+    buildToolsVersion '34.0.0'
+
+    // Path to Unity’s NDK (update if your Unity version is different)
+    ndkPath "C:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/PlaybackEngines/AndroidPlayer/NDK"
+
+    defaultConfig {
+        minSdkVersion 24
+        targetSdkVersion 35
+        versionCode 1
+        versionName '0.1'
+
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+
+        consumerProguardFiles 'proguard-unity.txt'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    aaptOptions {
+        noCompress = [
+                '.unity3d', '.ress', '.resource',
+                '.obb', '.bundle', '.unityexp'
+        ] + unityStreamingAssets.tokenize(', ')
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }
+
+    packagingOptions {
+        doNotStrip '*/armeabi-v7a/*.so'
+        doNotStrip '*/arm64-v8a/*.so'
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
+
+    sourceSets {
+        main {
+            // ✅ Ensure Unity IL2CPP output and JARs are available
+            jni.srcDirs = ["src/main/Il2CppOutputProject"]
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    // ✅ Unity’s classes (unity-classes.jar must be inside unityLibrary/libs/)
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}

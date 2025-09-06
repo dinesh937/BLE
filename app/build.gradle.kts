@@ -35,20 +35,34 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    // ✅ Fix duplicate .so file issue
+    packaging {
+        resources {
+            pickFirsts.add("**/libc++_shared.so")
+        }
+    }
 }
 
 dependencies {
+    // AndroidX + Material
     implementation(libs.androidx.core)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
     implementation(libs.activity)
+
+    // Charts + UI
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
-    implementation ("androidx.cardview:cardview:1.0.0")
-    implementation("androidx.appcompat:appcompat:1.7.0")
-    implementation("androidx.core:core:1.15.0")
+    implementation("androidx.cardview:cardview:1.0.0")
     implementation("androidx.annotation:annotation:1.8.2")
+    implementation("androidx.core:core-ktx:1.12.0")
+
+    // Unit testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    // ✅ Unity Library integration
+    implementation(project(":unityLibrary"))
 }

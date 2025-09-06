@@ -1,15 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">DashPod</string>
-
-    <!-- Array for DeviceActivity Spinner -->
+    <!-- Arrays -->
     <string-array name="device_macros_array">
         <item>Select Macro</item>
         <item>BNO Eu&amp;Qua</item>
         <item>BNO Set up Cal</item>
     </string-array>
 
-    <!-- Array for BPMActivity Spinner -->
     <string-array name="bpm_macros_array">
         <item>Select Macro</item>
         <item>BPM Start</item>
